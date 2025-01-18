@@ -1,0 +1,9 @@
+The following CSS code snippet demonstrates an issue where the `calc()` function does not correctly handle the addition of percentages and pixels when applied to the `width` property:
+
+```css
+div {
+  width: calc(50% + 20px);
+}
+```
+
+The expected behavior is for the div to occupy 50% of its container's width plus an additional 20 pixels. However, some browsers might interpret this incorrectly, leading to unexpected layout behavior.  The issue stems from the limitations of how `calc()` handles mixed units in some older browser versions or specific rendering contexts.
