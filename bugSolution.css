@@ -1,0 +1,28 @@
+Several strategies can mitigate this issue:
+
+**1. Avoid Mixed Units:** The most straightforward solution is to avoid mixing percentage and pixel units in `calc()` for width. Use either percentage or pixels for the width calculations.
+
+**2. Use JavaScript:** For more precise control and cross-browser consistency, you can use JavaScript to calculate the desired width dynamically based on the container's width. 
+
+**3. Alternative Layout:** Employing layout techniques like flexbox or grid can provide better control over element sizing and reduce the reliance on `calc()` with mixed units. 
+
+Example using JavaScript:
+
+```javascript
+const div = document.getElementById('myDiv');
+const containerWidth = div.parentElement.offsetWidth;
+div.style.width = `calc(${containerWidth * 0.5 + 20}px)`;
+```
+
+Example using flexbox:
+
+```css
+.container {
+  display: flex;
+}
+
+div {
+  width: 50%;
+  margin-left: 20px;
+}
+```
